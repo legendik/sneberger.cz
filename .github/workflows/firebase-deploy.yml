@@ -11,4 +11,4 @@ jobs:
         with:
           firebase-token: ${{ secrets.firebase_token }}
           alias: ${{ alias }} // Optional
-#          hugo-params: -D // Optional. Any params for the `hugo` command. [Refer doc here](https://gohugo.io/commands/hugo/)
+          hugo-params: "" // Optional. Any params for the `hugo` command. [Refer doc here](https://gohugo.io/commands/hugo/)
