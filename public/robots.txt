@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: https://sneberger.cz/sitemap.xml
