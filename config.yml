@@ -76,6 +76,8 @@ params:
   socialIcons:
     - name: twitter
       url: "https://twitter.com/SnebergerMarek"
+    - name: email
+      url: "mailto:marek+web@sneberger.cz?subject=Hello from web \U0001F44B!"
     - name: github
       url: "https://github.com/legendik"
 
