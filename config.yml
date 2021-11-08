@@ -80,6 +80,8 @@ params:
       url: "mailto:marek+web@sneberger.cz?subject=Hello from web \U0001F44B!"
     - name: github
       url: "https://github.com/legendik"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/legendik/"
 
   analytics:
     google:
