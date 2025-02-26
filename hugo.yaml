@@ -58,6 +58,13 @@ menu:
       weight: 5
 
 params:
+  giscus:
+    repo: "legendik/sneberger.cz"
+    repoID: "R_kgDOGWIH5Q"
+    category: "Blog Comments"
+    categoryID: "DIC_kwDOGWIH5c4CnXs3"
+    mapping: "pathname"
+
   # Site description
   description: "Thoughts on software engineering, patterns, and clean code"
   author: "Marek Šneberger"
