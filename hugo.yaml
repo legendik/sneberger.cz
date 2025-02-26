@@ -73,12 +73,12 @@ params:
 
   # Social icons
   socialIcons:
-    - name: github
-      url: "https://github.com/yourusername"
-    - name: linkedin
-      url: "https://linkedin.com/in/yourusername"
-    - name: twitter
-      url: "https://twitter.com/yourusername"
+    - name: GitHub
+      url: "https://github.com/legendik"
+    - name: LinkedIn
+      url: "https://www.linkedin.com/in/SnebergerMarek"
+    - name: Twitter
+      url: "https://twitter.com/SnebergerMarek"
 
   # Post page settings
   ShowReadingTime: true
