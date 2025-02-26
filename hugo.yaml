@@ -1,0 +1,105 @@
+# Basic site configuration
+baseURL: "https://sneberger.cz/"
+languageCode: "en-us"
+title: "Šneberger Marek"
+theme: "PaperMod"  # Replace with your chosen theme
+
+# Content management
+pagination:
+  paperSize: 5
+summaryLength: 30
+enableEmoji: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+
+# URL management
+permalinks:
+  posts: "/post/:year/:month/:slug/"
+
+# Syntax highlighting settings
+markup:
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: false
+    style: "monokai"  # Other options: github, solarized-dark, dracula
+
+# Taxonomies (for organizing content)
+taxonomies:
+  category: categories
+  tag: tags
+  series: series  # Useful for multi-part technical posts
+
+# Menu items
+menu:
+  main:
+    - identifier: "home"
+      name: "Home"
+      url: "/"
+      weight: 1
+    - identifier: "blog"
+      name: "All Posts"
+      url: "/posts/"
+      weight: 2
+    - identifier: "categories"
+      name: "Categories"
+      url: "/categories/"
+      weight: 3
+    - identifier: "tags"
+      name: "Tags"
+      url: "/tags/"
+      weight: 4
+    - identifier: "about"
+      name: "About"
+      url: "/about/"
+      weight: 5
+
+params:
+  # Site description
+  description: "Thoughts on software engineering, patterns, and clean code"
+  author: "Marek Šneberger"
+
+  # Theme appearance
+  defaultTheme: auto  # dark, light, auto
+  disableThemeToggle: false
+
+  # Home layout
+  homeInfoParams:
+    Title: "Welcome to My Engineering Blog"
+    Content: "Exploring software architecture, design patterns, and practical implementations in Go and PHP"
+
+  # Social icons
+  socialIcons:
+    - name: github
+      url: "https://github.com/yourusername"
+    - name: linkedin
+      url: "https://linkedin.com/in/yourusername"
+    - name: twitter
+      url: "https://twitter.com/yourusername"
+
+  # Post page settings
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true  # Essential for code-heavy posts
+  ShowFullTextinRSS: true
+  ShowToc: true  # Table of Contents
+  TocOpen: false  # ToC closed by default
+
+  # Code block settings
+  assets:
+    disableHLJS: false  # Enable/disable highlight.js
+
+  # Search functionality
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
