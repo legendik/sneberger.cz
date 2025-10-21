@@ -1,0 +1,250 @@
+/* Tokyo Night theme override for Terminal theme */
+:root {
+  /* Tokyo Night Dark color palette */
+  --background: #1a1b26 !important;
+  --foreground: #c0caf5 !important;
+  --accent: #7aa2f7 !important;
+  --font-size: 1rem;
+  --line-height: 1.6em;
+  --radius: 8px;
+  
+  /* Additional Tokyo Night variables */
+  --code-border: #414868;
+  --panel-color: #24283b;
+  --secondary-color: #414868;
+  --highlight-color: #292e42;
+  --success-color: #9ece6a;
+  --warning-color: #e0af68;
+  --error-color: #f7768e;
+  --info-color: #2ac3de;
+  --purple: #bb9af7;
+  --orange: #ff9e64;
+}
+
+/* Enhanced code block styling for Tokyo Night */
+pre {
+  background: #24283b !important;
+  border: 1px solid #414868 !important;
+}
+
+code {
+  background: rgba(116, 199, 236, 0.1) !important;
+  border: 1px solid #414868 !important;
+}
+
+/* Tokyo Night syntax highlighting */
+.chroma {
+  background-color: #24283b !important;
+  color: #c0caf5 !important;
+}
+
+.chroma .k { color: #bb9af7 !important; } /* Keywords */
+.chroma .kc { color: #bb9af7 !important; } /* Keyword.Constant */
+.chroma .kd { color: #bb9af7 !important; } /* Keyword.Declaration */
+.chroma .kn { color: #bb9af7 !important; } /* Keyword.Namespace */
+.chroma .kp { color: #bb9af7 !important; } /* Keyword.Pseudo */
+.chroma .kr { color: #bb9af7 !important; } /* Keyword.Reserved */
+.chroma .kt { color: #bb9af7 !important; } /* Keyword.Type */
+
+.chroma .s { color: #9ece6a !important; } /* Strings */
+.chroma .sa { color: #9ece6a !important; } /* String.Affix */
+.chroma .sb { color: #9ece6a !important; } /* String.Backtick */
+.chroma .sc { color: #9ece6a !important; } /* String.Char */
+.chroma .dl { color: #9ece6a !important; } /* String.Delimiter */
+.chroma .sd { color: #9ece6a !important; } /* String.Doc */
+.chroma .s2 { color: #9ece6a !important; } /* String.Double */
+.chroma .se { color: #9ece6a !important; } /* String.Escape */
+.chroma .sh { color: #9ece6a !important; } /* String.Heredoc */
+.chroma .si { color: #9ece6a !important; } /* String.Interpol */
+.chroma .sx { color: #9ece6a !important; } /* String.Other */
+.chroma .sr { color: #9ece6a !important; } /* String.Regex */
+.chroma .s1 { color: #9ece6a !important; } /* String.Single */
+.chroma .ss { color: #9ece6a !important; } /* String.Symbol */
+
+.chroma .c { color: #565f89 !important; } /* Comments */
+.chroma .ch { color: #565f89 !important; } /* Comment.Hashbang */
+.chroma .cm { color: #565f89 !important; } /* Comment.Multiline */
+.chroma .c1 { color: #565f89 !important; } /* Comment.Single */
+.chroma .cs { color: #565f89 !important; } /* Comment.Special */
+
+.chroma .n { color: #c0caf5 !important; } /* Names */
+.chroma .na { color: #bb9af7 !important; } /* Name.Attribute */
+.chroma .nb { color: #e0af68 !important; } /* Name.Builtin */
+.chroma .bp { color: #e0af68 !important; } /* Name.Builtin.Pseudo */
+.chroma .nc { color: #2ac3de !important; } /* Name.Class */
+.chroma .no { color: #ff9e64 !important; } /* Name.Constant */
+.chroma .nd { color: #bb9af7 !important; } /* Name.Decorator */
+.chroma .ni { color: #c0caf5 !important; } /* Name.Entity */
+.chroma .ne { color: #f7768e !important; } /* Name.Exception */
+.chroma .nf { color: #7aa2f7 !important; } /* Name.Function */
+.chroma .fm { color: #7aa2f7 !important; } /* Name.Function.Magic */
+.chroma .nl { color: #c0caf5 !important; } /* Name.Label */
+.chroma .nn { color: #c0caf5 !important; } /* Name.Namespace */
+.chroma .nx { color: #c0caf5 !important; } /* Name.Other */
+.chroma .py { color: #c0caf5 !important; } /* Name.Property */
+.chroma .nt { color: #f7768e !important; } /* Name.Tag */
+.chroma .nv { color: #c0caf5 !important; } /* Name.Variable */
+.chroma .vc { color: #c0caf5 !important; } /* Name.Variable.Class */
+.chroma .vg { color: #c0caf5 !important; } /* Name.Variable.Global */
+.chroma .vi { color: #c0caf5 !important; } /* Name.Variable.Instance */
+.chroma .vm { color: #c0caf5 !important; } /* Name.Variable.Magic */
+
+.chroma .o { color: #89ddff !important; } /* Operators */
+.chroma .ow { color: #bb9af7 !important; } /* Operator.Word */
+
+.chroma .p { color: #c0caf5 !important; } /* Punctuation */
+
+.chroma .m { color: #ff9e64 !important; } /* Numbers */
+.chroma .mb { color: #ff9e64 !important; } /* Number.Bin */
+.chroma .mf { color: #ff9e64 !important; } /* Number.Float */
+.chroma .mh { color: #ff9e64 !important; } /* Number.Hex */
+.chroma .mi { color: #ff9e64 !important; } /* Number.Integer */
+.chroma .il { color: #ff9e64 !important; } /* Number.Integer.Long */
+.chroma .mo { color: #ff9e64 !important; } /* Number.Oct */
+
+.chroma .ld { color: #9ece6a !important; } /* Literal.Date */
+
+/* Enhanced link styling */
+a:hover {
+  color: #89ddff !important;
+}
+
+/* Better blockquote styling */
+blockquote {
+  border-left: 4px solid var(--accent) !important;
+  border-top: none !important;
+  border-bottom: none !important;
+  background: rgba(122, 162, 247, 0.1) !important;
+}
+
+/* Enhanced Terminal aesthetics */
+.container {
+  padding: 20px 40px !important;
+}
+
+/* Better spacing for full-width */
+@media (min-width: 1200px) {
+  .container {
+    padding: 40px 80px !important;
+  }
+}
+
+/* Logo styling for terminal feel */
+.logo a {
+  font-family: 'Fira Code', monospace !important;
+  color: #9ece6a !important;
+}
+
+.logo a:hover {
+  color: #7aa2f7 !important;
+}
+
+/* Menu improvements */
+.menu a {
+  color: #c0caf5 !important;
+  transition: color 0.2s ease !important;
+}
+
+.menu a:hover {
+  color: #7aa2f7 !important;
+}
+
+/* Post meta styling */
+.post-date, .post-author, .reading-time {
+  color: #565f89 !important;
+  font-size: 0.9rem !important;
+}
+
+/* Table styling */
+table {
+  border: 1px solid #414868 !important;
+}
+
+th, td {
+  border: 1px solid #414868 !important;
+}
+
+/* Recent Posts Section Styling */
+.recent-posts {
+  margin-top: 60px !important;
+  padding-top: 40px !important;
+  border-top: 2px solid #414868 !important;
+}
+
+.recent-posts h2 {
+  color: #7aa2f7 !important;
+  margin-bottom: 30px !important;
+  font-size: 1.5rem !important;
+}
+
+.recent-posts .post.on-list {
+  margin-bottom: 40px !important;
+  padding-bottom: 30px !important;
+  border-bottom: 1px solid #292e42 !important;
+}
+
+.recent-posts .post.on-list:last-of-type {
+  border-bottom: none !important;
+}
+
+.recent-posts .post-title h3 {
+  font-size: 1.2rem !important;
+  margin-bottom: 10px !important;
+}
+
+.recent-posts .post-title a {
+  color: #c0caf5 !important;
+  text-decoration: none !important;
+}
+
+.recent-posts .post-title a:hover {
+  color: #7aa2f7 !important;
+}
+
+.recent-posts .post-meta {
+  margin-bottom: 15px !important;
+  font-size: 0.85rem !important;
+  color: #565f89 !important;
+}
+
+.recent-posts .post-tags {
+  margin-bottom: 15px !important;
+}
+
+.recent-posts .post-tags a {
+  color: #bb9af7 !important;
+  text-decoration: none !important;
+}
+
+.recent-posts .post-tags a:hover {
+  color: #9ece6a !important;
+}
+
+.recent-posts .post-content p {
+  color: #a9b1d6 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 15px !important;
+}
+
+.all-posts-link {
+  text-align: center !important;
+  margin-top: 40px !important;
+  padding-top: 30px !important;
+  border-top: 1px solid #292e42 !important;
+}
+
+.all-posts-link .button {
+  background: transparent !important;
+  color: #7aa2f7 !important;
+  border: 2px solid #7aa2f7 !important;
+  padding: 12px 24px !important;
+  text-decoration: none !important;
+  border-radius: 4px !important;
+  font-weight: bold !important;
+  transition: all 0.2s ease !important;
+}
+
+.all-posts-link .button:hover {
+  background: #7aa2f7 !important;
+  color: #1a1b26 !important;
+}

@@ -2,11 +2,11 @@
 baseURL: "https://sneberger.cz/"
 languageCode: "en-us"
 title: "Šneberger Marek"
-theme: "PaperMod"  # Replace with your chosen theme
+theme: "terminal"
 
 # Content management
 pagination:
-  paperSize: 5
+  pagerSize: 10
 summaryLength: 30
 enableEmoji: true
 enableRobotsTXT: true
@@ -25,7 +25,10 @@ markup:
     lineNos: false
     lineNumbersInTable: true
     noClasses: false
-    style: "monokai"  # Other options: github, solarized-dark, dracula
+    style: "native"
+  goldmark:
+    renderer:
+      unsafe: true
 
 # Taxonomies (for organizing content)
 taxonomies:
@@ -33,31 +36,53 @@ taxonomies:
   tag: tags
   series: series  # Useful for multi-part technical posts
 
-# Menu items
-menu:
-  main:
-    - identifier: "home"
-      name: "Home"
-      url: "/"
-      weight: 1
-    - identifier: "blog"
-      name: "All Posts"
-      url: "/posts/"
-      weight: 2
-    - identifier: "categories"
-      name: "Categories"
-      url: "/categories/"
-      weight: 3
-    - identifier: "tags"
-      name: "Tags"
-      url: "/tags/"
-      weight: 4
-    - identifier: "about"
-      name: "About"
-      url: "/about/"
-      weight: 5
+languages:
+  en:
+    title: "Šneberger Marek"
+    subtitle: "Software Engineering & Architecture"
+    keywords: "software engineering, golang, php, architecture, design patterns, clean code"
+    copyright: "© 2025 Marek Šneberger"
+    menuMore: "Show more"
+    readMore: "Read more →"
+    readOtherPosts: "Other posts"
+    newerPosts: "← Newer"
+    olderPosts: "Older →"
+    missingContentMessage: "Nothing here yet..."
+    missingBackButtonLabel: "← Back home"
+    minuteReadingTime: "min read"
+    words: "words"
+    
+    params:
+      logo:
+        logoText: "~/sneberger"
+        logoHomeLink: "/"
+    
+    menu:
+      main:
+        - identifier: "posts"
+          name: "~/posts"
+          url: "/posts/"
+          weight: 1
+        - identifier: "tags" 
+          name: "~/tags"
+          url: "/tags/"
+          weight: 2
 
 params:
+  # Terminal theme specific settings
+  contentTypeName: "posts"
+  showMenuItems: 2
+  fullWidthTheme: true
+  centerTheme: false
+  autoCover: true
+  showLastUpdated: true
+  readingTime: true
+  
+  # Site metadata
+  description: "Thoughts on software engineering, patterns, and clean code"
+  author: "Marek Šneberger"
+  
+  # Comments system
   giscus:
     repo: "legendik/sneberger.cz"
     repoID: "R_kgDOGWIH5Q"
@@ -65,20 +90,12 @@ params:
     categoryID: "DIC_kwDOGWIH5c4CnXs3"
     mapping: "pathname"
 
-  # Site description
-  description: "Thoughts on software engineering, patterns, and clean code"
-  author: "Marek Šneberger"
-
-  # Theme appearance
-  defaultTheme: auto  # dark, light, auto
-  disableThemeToggle: false
-
-  # Home layout
-  homeInfoParams:
-    Title: "Welcome to My Engineering Blog"
-    Content: "Exploring software architecture, design patterns, and practical implementations in Go and PHP"
-
-  # Social icons
+  # Social links (Terminal theme format)
+  twitter:
+    creator: "SnebergerMarek"
+    site: "SnebergerMarek"
+  
+  # Social icons for homepage
   socialIcons:
     - name: GitHub
       url: "https://github.com/legendik"
@@ -86,27 +103,3 @@ params:
       url: "https://www.linkedin.com/in/SnebergerMarek"
     - name: Twitter
       url: "https://twitter.com/SnebergerMarek"
-
-  # Post page settings
-  ShowReadingTime: true
-  ShowShareButtons: true
-  ShowPostNavLinks: true
-  ShowBreadCrumbs: true
-  ShowCodeCopyButtons: true  # Essential for code-heavy posts
-  ShowFullTextinRSS: true
-  ShowToc: true  # Table of Contents
-  TocOpen: false  # ToC closed by default
-
-  # Code block settings
-  assets:
-    disableHLJS: false  # Enable/disable highlight.js
-
-  # Search functionality
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    keys: ["title", "permalink", "summary", "content"]
