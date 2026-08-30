@@ -1,6 +1,6 @@
 # Basic site configuration
 baseURL: "https://sneberger.cz/"
-languageCode: "en-us"
+locale: "en-us"
 title: "Šneberger Marek"
 theme: "terminal"
 
