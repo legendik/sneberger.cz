@@ -1,0 +1,409 @@
+/*
+ * Tokyo Night colour scheme for the Terminal theme.
+ *
+ * Loaded by layouts/partials/extended_head.html, which renders after the
+ * theme's own stylesheets (main, code, syntax, header, ...). Because this file
+ * lands last in the cascade, plain declarations beat the theme's — do not add
+ * `!important` here, and do not move this file into assets/css/ (see the note
+ * in extended_head.html for why that placement loses).
+ */
+
+:root {
+  /* Tokyo Night Dark palette */
+  --background: #1a1b26;
+  --foreground: #c0caf5;
+  --accent: #7aa2f7;
+  --font-size: 1rem;
+  --line-height: 1.6em;
+  --radius: 8px;
+
+  --panel-color: #24283b;
+  --code-border: #414868;
+  --secondary-color: #414868;
+  --highlight-color: #292e42;
+  --muted-color: #565f89;
+  --body-color: #a9b1d6;
+
+  --success-color: #9ece6a;
+  --warning-color: #e0af68;
+  --error-color: #f7768e;
+  --info-color: #2ac3de;
+  --purple: #bb9af7;
+  --orange: #ff9e64;
+
+  /* Consumed by the theme's syntax.css for line numbers and gutters */
+  --comment: var(--muted-color);
+}
+
+/* ---------------------------------------------------------------- code --- */
+
+pre {
+  background: var(--panel-color);
+  border: 1px solid var(--code-border);
+}
+
+/* Inline code only — a border here would otherwise box every line of a
+   highlighted code block, which sets `pre code { border: none }` earlier. */
+:not(pre) > code {
+  background: rgba(116, 199, 236, 0.1);
+  border: 1px solid var(--code-border);
+}
+
+.chroma {
+  background-color: var(--panel-color);
+  color: var(--foreground);
+}
+
+/* Keywords */
+.chroma .k,
+.chroma .kc,
+.chroma .kd,
+.chroma .kn,
+.chroma .kp,
+.chroma .kr,
+.chroma .kt,
+.chroma .ow,
+.chroma .na,
+.chroma .nd { color: var(--purple); }
+
+/* Strings */
+.chroma .s,
+.chroma .sa,
+.chroma .sb,
+.chroma .sc,
+.chroma .dl,
+.chroma .sd,
+.chroma .s2,
+.chroma .se,
+.chroma .sh,
+.chroma .si,
+.chroma .sx,
+.chroma .sr,
+.chroma .s1,
+.chroma .ss,
+.chroma .ld { color: var(--success-color); }
+
+/* Comments */
+.chroma .c,
+.chroma .ch,
+.chroma .cm,
+.chroma .c1,
+.chroma .cs { color: var(--muted-color); }
+
+/* Names */
+.chroma .n,
+.chroma .ni,
+.chroma .nl,
+.chroma .nn,
+.chroma .nx,
+.chroma .py,
+.chroma .nv,
+.chroma .vc,
+.chroma .vg,
+.chroma .vi,
+.chroma .vm,
+.chroma .p { color: var(--foreground); }
+
+.chroma .nb,
+.chroma .bp { color: var(--warning-color); }
+.chroma .nc { color: var(--info-color); }
+.chroma .no { color: var(--orange); }
+.chroma .ne,
+.chroma .nt { color: var(--error-color); }
+.chroma .nf,
+.chroma .fm { color: var(--accent); }
+
+/* Operators and numbers */
+.chroma .o { color: #89ddff; }
+
+.chroma .m,
+.chroma .mb,
+.chroma .mf,
+.chroma .mh,
+.chroma .mi,
+.chroma .il,
+.chroma .mo { color: var(--orange); }
+
+/* --------------------------------------------------------------- prose --- */
+
+a:hover {
+  color: #89ddff;
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  border-top: none;
+  border-bottom: none;
+  background: rgba(122, 162, 247, 0.1);
+}
+
+table,
+th,
+td {
+  border: 1px solid var(--code-border);
+}
+
+/* -------------------------------------------------------------- layout --- */
+
+.container {
+  padding: 20px 40px;
+}
+
+@media (max-width: 684px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding: 40px 80px;
+  }
+}
+
+/* -------------------------------------------------------------- header --- */
+
+.logo {
+  font-family: "Fira Code", Monaco, Consolas, "Ubuntu Mono", monospace;
+  background: var(--success-color);
+  color: var(--background);
+}
+
+.header__logo a:hover .logo {
+  background: var(--accent);
+}
+
+.menu a {
+  color: var(--foreground);
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------- meta --- */
+
+.post-date,
+.post-author,
+.reading-time {
+  color: var(--muted-color);
+  font-size: 0.9rem;
+}
+
+/* -------------------------------------------------------- recent posts --- */
+
+.recent-posts {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid var(--secondary-color);
+}
+
+.recent-posts h2 {
+  color: var(--accent);
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.recent-posts .post.on-list {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--highlight-color);
+}
+
+.recent-posts .post.on-list:last-of-type {
+  border-bottom: none;
+}
+
+.recent-posts .post-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.recent-posts .post-title a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.recent-posts .post-title a:hover {
+  color: var(--accent);
+}
+
+.recent-posts .post-meta {
+  margin-bottom: 15px;
+  font-size: 0.85rem;
+  color: var(--muted-color);
+}
+
+.recent-posts .post-tags {
+  margin-bottom: 15px;
+}
+
+.recent-posts .post-tags a {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+.recent-posts .post-tags a:hover {
+  color: var(--success-color);
+}
+
+.recent-posts .post-content p {
+  color: var(--body-color);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.all-posts-link {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--highlight-color);
+}
+
+.all-posts-link .button {
+  display: inline-block;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.all-posts-link .button:hover {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* ------------------------------------------------------------ projects --- */
+
+.projects {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 2px solid var(--secondary-color);
+}
+
+.projects h2 {
+  color: var(--accent);
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.projects__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.project {
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--highlight-color);
+}
+
+.project:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.project__title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.project__title a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.project__title a::before {
+  content: "→ ";
+  color: var(--muted-color);
+}
+
+.project__title a:hover {
+  color: var(--accent);
+}
+
+.project__lang {
+  padding: 2px 8px;
+  border: 1px solid var(--code-border);
+  border-radius: 4px;
+  color: var(--purple);
+  font-size: 0.75rem;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.project__description {
+  margin: 0;
+  color: var(--body-color);
+  line-height: 1.6;
+}
+
+/* -------------------------------------------------------------- social --- */
+
+/* extended_footer.html renders after </footer>, so these links sit below the
+   copyright line. An earlier version used `.container > .footer { order: 1 }`
+   to flip them visually, but that made tab order diverge from visual order
+   (WCAG 2.4.3) — a keyboard user reached the theme-attribution links first.
+   Reading order and DOM order now agree.
+
+   The rule above puts the separator at the top of the whole footer block, so
+   copyright and social links read as one unit rather than the copyright
+   drifting up against the last section of content. */
+.container > .footer {
+  margin-top: 60px;
+  border-top: 1px solid var(--highlight-color);
+}
+
+.social__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.social__list a {
+  text-decoration: none;
+}
+
+.social__name {
+  color: var(--muted-color);
+}
+
+.social__handle {
+  color: var(--accent);
+}
+
+.social__list a:hover .social__name,
+.social__list a:hover .social__handle {
+  color: var(--success-color);
+}
+
+/* ----------------------------------------------------- table of contents --- */
+
+/* `toc: true` is site-wide, but the theme renders the "Contents" heading even
+   when a post has no headings at all — Hugo still emits an empty <nav>. */
+.table-of-contents:has(> nav:empty) {
+  display: none;
+}
+
+/* ------------------------------------------------------------ comments --- */
+
+.comments {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid var(--secondary-color);
+}
