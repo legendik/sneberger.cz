@@ -1,4 +1,7 @@
-{{- with hugo.Data.social -}}
+{{/* `.Site.Data`, not `hugo.Data`: the deploy builds on Hugo 0.147.7, which
+     predates hugo.Data (added in 0.156). Newer Hugo logs a deprecation warning
+     for this form but still builds. Switch once the build image is upgraded. */}}
+{{- with .Site.Data.social -}}
   <nav class="social" aria-label="Elsewhere">
     <ul class="social__list">
       {{- range . }}
