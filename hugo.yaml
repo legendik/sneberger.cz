@@ -1,6 +1,7 @@
 # Basic site configuration
 baseURL: "https://sneberger.cz/"
 locale: "en-us"
+defaultContentLanguage: "en"
 title: "Šneberger Marek"
 theme: "terminal"
 
@@ -39,31 +40,35 @@ taxonomies:
 languages:
   en:
     title: "Šneberger Marek"
-    subtitle: "Software Engineering & Architecture"
-    keywords: "software engineering, golang, php, architecture, design patterns, clean code"
     copyright: "© 2025 Marek Šneberger"
-    menuMore: "Show more"
-    readMore: "Read more →"
-    readOtherPosts: "Other posts"
-    newerPosts: "← Newer"
-    olderPosts: "Older →"
-    missingContentMessage: "Nothing here yet..."
-    missingBackButtonLabel: "← Back home"
-    minuteReadingTime: "min read"
-    words: "words"
-    
+
+    # The Terminal theme reads all of these from Site.Params, so they must live
+    # under `params:` — at the language's top level they are silently dropped.
     params:
+      # Also drawn on the share card — rerun scripts/make-og-image.py if this changes.
+      subtitle: "Backend Systems, Automation & AI Tooling"
+      keywords: "backend development, golang, typescript, architecture, automation, n8n, ai tooling, homelab"
+      menuMore: "Show more"
+      readMore: "Read more →"
+      readOtherPosts: "Other posts"
+      newerPosts: "← Newer"
+      olderPosts: "Older →"
+      missingContentMessage: "Nothing here yet..."
+      missingBackButtonLabel: "← Back home"
+      minuteReadingTime: "min read"
+      words: "words"
+
       logo:
         logoText: "~/sneberger"
         logoHomeLink: "/"
-    
+
     menu:
       main:
         - identifier: "posts"
           name: "~/posts"
           url: "/posts/"
           weight: 1
-        - identifier: "tags" 
+        - identifier: "tags"
           name: "~/tags"
           url: "/tags/"
           weight: 2
@@ -77,12 +82,13 @@ params:
   autoCover: true
   showLastUpdated: true
   readingTime: true
-  
+  toc: true
+  tocTitle: "Contents"
+
   # Site metadata
-  description: "Thoughts on software engineering, patterns, and clean code"
   author: "Marek Šneberger"
-  
-  # Comments system
+
+  # Comments system (rendered by layouts/partials/comments.html)
   giscus:
     repo: "legendik/sneberger.cz"
     repoID: "R_kgDOGWIH5Q"
@@ -94,12 +100,3 @@ params:
   twitter:
     creator: "SnebergerMarek"
     site: "SnebergerMarek"
-  
-  # Social icons for homepage
-  socialIcons:
-    - name: GitHub
-      url: "https://github.com/legendik"
-    - name: LinkedIn
-      url: "https://www.linkedin.com/in/SnebergerMarek"
-    - name: Twitter
-      url: "https://twitter.com/SnebergerMarek"
