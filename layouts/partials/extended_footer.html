@@ -1,0 +1,13 @@
+{{- with hugo.Data.social -}}
+  <nav class="social" aria-label="Elsewhere">
+    <ul class="social__list">
+      {{- range . }}
+        <li>
+          <a href="{{ .url }}" rel="me noopener" target="_blank">
+            <span class="social__name">{{ .name }}</span>/<span class="social__handle">{{ .handle }}</span>
+          </a>
+        </li>
+      {{- end }}
+    </ul>
+  </nav>
+{{- end -}}

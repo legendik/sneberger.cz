@@ -27,7 +27,9 @@
             {{- end -}}
             {{- if .Site.Params.readingTime -}}
               {{- if .ReadingTime -}}
-                <span class="reading-time"> • {{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }}</span>
+                {{/* The theme's post.css already inserts a "::" separator before
+                     every .post-meta child after the first — don't add another. */}}
+                <span class="reading-time">{{ .ReadingTime }} {{ $.Site.Params.minuteReadingTime | default "min read" }}</span>
               {{- end -}}
             {{- end -}}
           </div>
@@ -63,4 +65,21 @@
       <p>No posts yet. Check back soon!</p>
     {{ end }}
   </div>
+
+  {{ with hugo.Data.projects }}
+    <div class="projects">
+      <h2>Projects</h2>
+      <ul class="projects__list">
+        {{ range . }}
+          <li class="project">
+            <h3 class="project__title">
+              <a href="{{ .url }}" rel="noopener" target="_blank">{{ .name }}</a>
+              {{ with .language }}<span class="project__lang">{{ . }}</span>{{ end }}
+            </h3>
+            <p class="project__description">{{ .description }}</p>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
 {{ end }}

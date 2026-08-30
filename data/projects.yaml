@@ -1,0 +1,30 @@
+# Projects shown on the homepage.
+#
+# Kept as static data rather than fetched from the GitHub API at build time:
+# unauthenticated API calls are rate-limited to 60/hour per IP, and Netlify's
+# build IPs are shared, so a live fetch would fail intermittently mid-deploy.
+# Descriptions are the ones from github.com/legendik/legendik (the profile
+# README), which read better than the repo blurbs.
+
+- name: "omarchy-n8n"
+  url: "https://github.com/legendik/omarchy-n8n"
+  language: "QML"
+  description: >-
+    An Omarchy/Quickshell plugin that shows n8n workflow and execution status
+    in the bar, with vim-motion navigation and desktop notifications on
+    execution failure.
+
+- name: "ha-jablotron-volta"
+  url: "https://github.com/legendik/ha-jablotron-volta"
+  language: "Python"
+  description: "Jablotron Volta heating for Home Assistant via Modbus."
+
+- name: "ha-ixcommand"
+  url: "https://github.com/legendik/ha-ixcommand"
+  language: "Python"
+  description: "Home Assistant integration for iX command systems."
+
+- name: "dotfiles"
+  url: "https://github.com/legendik/dotfiles"
+  language: "Shell"
+  description: "zsh + Powerlevel10k, managed with stow."

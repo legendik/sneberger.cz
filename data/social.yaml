@@ -1,0 +1,14 @@
+# Links rendered in the site footer by layouts/partials/extended_footer.html.
+# `handle` is what's displayed; `url` is where it goes.
+
+- name: "GitHub"
+  handle: "legendik"
+  url: "https://github.com/legendik"
+
+- name: "LinkedIn"
+  handle: "SnebergerMarek"
+  url: "https://www.linkedin.com/in/SnebergerMarek"
+
+- name: "Twitter"
+  handle: "SnebergerMarek"
+  url: "https://twitter.com/SnebergerMarek"
